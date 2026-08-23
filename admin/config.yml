@@ -23,11 +23,13 @@ collections:
         label: "Asosiy ma'lumotlar"
         name: "content"
         fields:
+          - { label: "E'lon paneli (sahifaning eng tepasida)", name: "announcement", widget: "string", required: false, hint: "Bo'sh qoldirsangiz, panel butunlay ko'rinmaydi" }
           - { label: "Yutuq belgisi (bosh sahifada)", name: "hero_badge", widget: "string" }
           - { label: "Sarlavha — boshlanishi", name: "hero_title_before", widget: "string" }
           - { label: "Sarlavha — ajratib ko'rsatiladigan qismi", name: "hero_title_highlight", widget: "string" }
           - { label: "Sarlavha — davomi", name: "hero_title_after", widget: "string" }
           - { label: "Tanishtiruv matni", name: "hero_text", widget: "text" }
+          - { label: "Tugmalar ostidagi kichik eslatma", name: "hero_cta_note", widget: "string", required: false }
 
           - label: "Statistika / Yutuqlar"
             name: "stats"

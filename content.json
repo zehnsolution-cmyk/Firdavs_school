@@ -1,27 +1,31 @@
 {
+  "announcement": "🟢 2026–2027 o'quv yiliga qabul ochiq — bepul diagnostika bilan boshlang",
+
   "hero_badge": "🏆 2 nafar o'quvchimiz Prezident maktabiga qabul qilindi!",
   "hero_title_before": "Farzandingiz kelajagi ",
   "hero_title_highlight": "Firdavs School",
   "hero_title_after": "da boshlanadi",
   "hero_text": "1-11-sinflargacha bo'lgan o'quvchilar uchun zamonaviy dasturlar, xalqaro darajadagi o'qituvchilar va g'amxo'r muhitda farzandingiz bilim va ko'nikmalarni mustahkam egallaydi.",
+  "hero_cta_note": "Bepul diagnostika — hech qanday to'lovsiz, farzandingiz bilim darajasini biling",
 
   "stats": [
     { "number": "1-11", "label": "sinflargacha qabul" },
+    { "number": "15.8K+", "label": "ijtimoiy tarmoq obunachisi" },
     { "number": "1 yil", "label": "faoliyat tajribamiz" },
-    { "number": "2 nafar", "label": "o'quvchimiz Prezident maktabiga qabul qilindi (4- va 7-sinf)" }
+    { "number": "2 nafar", "label": "o'quvchimiz Prezident maktabiga qabul qilindi" }
   ],
 
-  "banner_label": "Farzandingizni yozdirish uchun",
-  "banner_title": "Hoziroq qo'ng'iroq qiling!",
+  "banner_label": "BEPUL DIAGNOSTIKA TESTI",
+  "banner_title": "Farzandingiz salohiyatini bugun aniqlang!",
   "phone1": "+998 88 606 55 05",
   "phone2": "+998 88 938 55 05",
   "address": "Xorazm viloyati, Hazorasp tumani, Oybek mahallasi, markazda, \"Markaz kafe\" yonida",
 
-  "about_text": "Firdavs School — o'quvchilarga sifatli ta'lim va kuchli bilim asoslarini beruvchi zamonaviy ta'lim maskani. Bizning maqsadimiz har bir o'quvchini o'z salohiyatini to'liq namoyon eta oladigan bilimli va o'zini o'zi ishontirgan shaxs sifatida tarbiyalashdir.",
+  "about_text": "Firdavs School — o'quvchilarga sifatli ta'lim va kuchli bilim asoslarini beruvchi zamonaviy ta'lim maskani. Bizning maqsadimiz har bir o'quvchini o'z salohiyatini to'liq namoyon eta oladigan bilimli va o'zini o'zi ishontirgan shaxs sifatida tarbiyalashdir. Shu bilan birga, farzandingiz kuniga necha soat ekranga emas, sog'lom va rag'batlantiruvchi muhitda o'sishiga alohida e'tibor qaratamiz.",
 
   "advantages": [
-    { "icon": "🎓", "title": "Xalqaro darajadagi o'qituvchilar", "text": "Yuqori malakali va g'amxo'r pedagoglar jamoasi" },
-    { "icon": "📚", "title": "Zamonaviy dasturlar", "text": "Xalqaro standartlarga mos o'quv rejalari" },
+    { "icon": "🎓", "title": "Xalqaro darajadagi o'qituvchilar", "text": "Yuqori malakali va g'amxo'r pedagoglar jamoasi farzandingiz bilan individual ishlaydi" },
+    { "icon": "📚", "title": "Zamonaviy dasturlar", "text": "Xalqaro standartlarga mos o'quv rejalari va aniq natijaga yo'naltirilgan metodika" },
     { "icon": "🏆", "title": "Olimpiada tayyorgarligi", "text": "GEMO, GRAND OLIMPIADA kabi respublika va xalqaro musobaqalarga tayyorlaymiz" }
   ],
 
@@ -36,8 +40,8 @@
   ],
 
   "admission_steps": [
-    { "title": "Qo'ng'iroq qiling", "text": "Ko'rsatilgan raqamlarga qo'ng'iroq qilib, birlamchi ma'lumot oling" },
-    { "title": "Bepul diagnostika", "text": "Farzandingiz bilim darajasi bepul diagnostik test orqali aniqlanadi" },
+    { "title": "Qo'ng'iroq qiling", "text": "Ko'rsatilgan raqamlarga qo'ng'iroq qilib, birlamchi ma'lumot oling — 2 daqiqa vaqtingizni oladi" },
+    { "title": "Bepul diagnostika", "text": "Farzandingiz bilim darajasi bepul diagnostik test orqali aniqlanadi, hech qanday to'lov talab qilinmaydi" },
     { "title": "Suhbat", "text": "Farzandingiz va siz bilan tanishuv suhbati o'tkaziladi" },
     { "title": "Ro'yxatdan o'tish", "text": "Hujjatlarni topshirib, o'quv jarayoni boshlanadi" }
   ],
@@ -50,8 +54,8 @@
   ],
 
   "faq": [
+    { "q": "Bepul diagnostika testi bormi?", "a": "Ha. Farzandingizning bilim darajasi bepul diagnostik test orqali aniqlanadi — qaysi mavzularda kuchli, qaysilarida qo'shimcha ishlash kerakligi batafsil ko'rsatib beriladi. Hech qanday to'lov talab qilinmaydi." },
     { "q": "Maktab nechanchi sinflarni qabul qiladi?", "a": "1-11-sinflargacha qabul qilinadi. Bundan tashqari, 5- va 6-sinfni tugatgan o'quvchilar uchun Tabiiy fanlar (Science) va Ingliz tili yo'nalishida maxsus ixtisoslashtirilgan sinflar ham mavjud." },
-    { "q": "Bepul diagnostika testi bormi?", "a": "Ha. Farzandingizning bilim darajasi bepul diagnostik test orqali aniqlanadi — qaysi mavzularda kuchli, qaysilarida qo'shimcha ishlash kerakligi batafsil ko'rsatib beriladi." },
     { "q": "Ta'lim qaysi tilda olib boriladi?", "a": "BU YERGA JAVOB YOZING" },
     { "q": "Maktabga qabul qanday amalga oshiriladi?", "a": "Avval bepul diagnostika testi, so'ngra o'quvchi va ota-ona bilan suhbat orqali qabul amalga oshiriladi." },
     { "q": "O'quv narxi qancha?", "a": "Narxlar haqida to'liq ma'lumot uchun bizga qo'ng'iroq qiling: +998 88 606 55 05" }

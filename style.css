@@ -26,6 +26,12 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    /* scroll-behavior: smooth — menyudagi havolalar bosilganda sahifa "sakramasdan",
+       silliq tarzda tegishli bo'limga aylanadi */
+}
+
 body {
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     /* Inter — Rahimov School kabi zamonaviy ta'lim saytlarida ishlatiladigan aniq shrift */
@@ -70,6 +76,18 @@ a {
     margin-left: 4px;
 }
 
+/* ===== E'LON PANELI (eng tepadagi ingichka chiziq) ===== */
+
+.elon-panel {
+    background: linear-gradient(90deg, var(--yashil-toq), var(--yashil));
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 16px;
+    letter-spacing: 0.2px;
+}
+
 /* ===== YUQORIDAGI NAVIGATSIYA (MENYU) ===== */
 
 .nav {
@@ -77,10 +95,72 @@ a {
     backdrop-filter: blur(10px);
     /* backdrop-filter — orqa fon xiralashadi, menyu "shishasimon" ko'rinadi */
     border-bottom: 1px solid #eef1f6;
-    position: sticky
-;
+    position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.nav-ong {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Mobil menyu tugmasi (3 ta chiziqcha) — faqat kichik ekranlarda ko'rinadi */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--kok);
+    border-radius: 2px;
+    transition: 0.25s;
+}
+
+/* Tugma bosilganda "3 chiziqcha" X belgisiga aylanadi */
+.burger.ochiq span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burger.ochiq span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.ochiq span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.menyu-mobil {
+    display: none;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: white;
+    border-top: 1px solid #eef1f6;
+}
+
+.menyu-mobil.ochiq {
+    max-height: 400px;
+    /* max-height orqali menyu yumshoq "ochiladi" — display:none o'rniga shu usul animatsiyaga imkon beradi */
+}
+
+.menyu-mobil a {
+    padding: 16px 24px;
+    border-bottom: 1px solid #f3f5f9;
+    color: var(--kok);
+    font-weight: 600;
 }
 
 .nav-ichi {
@@ -214,6 +294,12 @@ a {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+.hero-eslatma {
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .hero-grafika {
@@ -636,6 +722,57 @@ a {
     margin: 0 auto;
 }
 
+/* ===== SUZUVCHI ALOQA TUGMALARI ===== */
+
+.suzuvchi-tugmalar {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 90;
+}
+
+.suzuvchi-tugma {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    box-shadow: var(--soya-katta);
+    transition: 0.2s;
+}
+
+.suzuvchi-tugma:hover {
+    transform: scale(1.08);
+}
+
+.suzuvchi-telegram {
+    background-color: #29a9eb;
+}
+
+.suzuvchi-tel {
+    background-color: var(--yashil);
+}
+
+/* ===== SAHIFA AYLANTIRILGANDA PAYDO BO'LISH ANIMATSIYASI ===== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    /* Bo'lim boshida ko'rinmas va biroz pastda turadi, ekranga kirganda joyiga "suzib" chiqadi */
+}
+
+.reveal.korindi {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ===== MOBIL TELEFONLAR UCHUN MOSLASHUV ===== */
 
 @media (max-width: 900px) {
@@ -650,7 +787,21 @@ a {
 
     .menyu {
         display: none;
-        /* Kichik ekranda menyuni yashiramiz, sodda saqlash uchun */
+        /* Kichik ekranda katta menyuni yashiramiz — o'rniga burger tugma orqali ochiladigan menyu ishlatiladi */
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .menyu-mobil {
+        display: flex;
+    }
+
+    .nav-tel-btn {
+        display: none;
+        /* Joy tejash uchun telefonda tepadagi qo'ng'iroq tugmasini yashiramiz —
+           o'rniga pastdagi suzuvchi tugma ishlatiladi */
     }
 
     .hero h1 {

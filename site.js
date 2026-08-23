@@ -8,11 +8,21 @@ async function saytniYukla() {
     const javob = await fetch("content.json");
     const c = await javob.json();
 
+    // ---- E'LON PANELI ----
+    const elonEl = document.getElementById("elon-panel");
+    if (c.announcement) {
+        elonEl.textContent = c.announcement;
+    } else {
+        elonEl.style.display = "none";
+        // Agar content.json'da announcement bo'sh qoldirilsa, panel butunlay yashiriladi
+    }
+
     // ---- HERO (yuqori tanishtiruv) qismi ----
     document.getElementById("hero-badge").textContent = c.hero_badge;
     document.getElementById("hero-title").innerHTML =
         c.hero_title_before + `<span>${c.hero_title_highlight}</span>` + c.hero_title_after;
     document.getElementById("hero-text").textContent = c.hero_text;
+    document.getElementById("hero-cta-note").textContent = c.hero_cta_note || "";
 
     // ---- STATISTIKA (yutuqlar) ro'yxati ----
     const statsHtml = c.stats.map(s => `
@@ -85,6 +95,43 @@ async function saytniYukla() {
     document.getElementById("footer-address").textContent = c.address;
     document.getElementById("footer-telegram").href = c.telegram;
     document.getElementById("footer-instagram").href = c.instagram;
+
+    // ---- Ma'lumotlar joylashib bo'lgach, scroll-animatsiyani ishga tushiramiz ----
+    scrollAnimatsiyaniYoq();
+}
+
+// Mobil menyu — "burger" tugmasi bosilganda menyu ochilib-yopiladi
+const burgerTugma = document.getElementById("burger");
+const mobilMenyu = document.getElementById("menyu-mobil");
+burgerTugma.addEventListener("click", () => {
+    mobilMenyu.classList.toggle("ochiq");
+    burgerTugma.classList.toggle("ochiq");
+});
+// Menyudagi havolalardan biri bosilganda, menyu avtomatik yopiladi
+mobilMenyu.querySelectorAll("a").forEach(havola => {
+    havola.addEventListener("click", () => {
+        mobilMenyu.classList.remove("ochiq");
+        burgerTugma.classList.remove("ochiq");
+    });
+});
+
+function scrollAnimatsiyaniYoq() {
+    // IntersectionObserver — element ekranga ko'ringanda avtomatik xabar beradi.
+    // Shu orqali bo'limlar sahifa aylantirilganda yumshoq "paydo bo'lish" effekti bilan chiqadi.
+    const elementlar = document.querySelectorAll(".blok, .statistika, .banner");
+    elementlar.forEach(el => el.classList.add("reveal"));
+
+    const kuzatuvchi = new IntersectionObserver((yozuvlar) => {
+        yozuvlar.forEach(yozuv => {
+            if (yozuv.isIntersecting) {
+                yozuv.target.classList.add("korindi");
+                kuzatuvchi.unobserve(yozuv.target);
+                // unobserve — bir marta ko'ringandan keyin kuzatishni to'xtatamiz (qayta-qayta ishlamasin)
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elementlar.forEach(el => kuzatuvchi.observe(el));
 }
 
 saytniYukla();
