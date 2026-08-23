@@ -1,0 +1,82 @@
+# Bu fayl admin panelning "xaritasi" — manager qaysi maydonlarni
+# tahrirlashi mumkinligini shu yerda belgilaymiz.
+
+backend:
+  name: git-gateway
+  # git-gateway — Netlify orqali GitHub repога xavfsiz kirish usuli.
+  # Buning ishlashi uchun Netlify saytida Identity va Git Gateway yoqilgan bo'lishi kerak.
+  branch: main
+  # Agar GitHub repongizdagi asosiy branch nomi "master" bo'lsa, shu yerni "master" ga o'zgartiring
+
+# O'zgartirilgan matnlar to'g'ridan-to'g'ri saqlanadi (pull so'rov ochilmaydi)
+publish_mode: simple
+
+media_folder: "images"
+public_folder: "/images"
+# Agar manager rasm yuklasa, shu "images" papkasiga tushadi
+
+collections:
+  - name: "content"
+    label: "Sayt ma'lumotlari"
+    files:
+      - file: "content.json"
+        label: "Asosiy ma'lumotlar"
+        name: "content"
+        fields:
+          - { label: "Yutuq belgisi (bosh sahifada)", name: "hero_badge", widget: "string" }
+          - { label: "Sarlavha — boshlanishi", name: "hero_title_before", widget: "string" }
+          - { label: "Sarlavha — ajratib ko'rsatiladigan qismi", name: "hero_title_highlight", widget: "string" }
+          - { label: "Sarlavha — davomi", name: "hero_title_after", widget: "string" }
+          - { label: "Tanishtiruv matni", name: "hero_text", widget: "text" }
+
+          - label: "Statistika / Yutuqlar"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Raqam yoki so'z (masalan: 1 yil)", name: "number", widget: "string" }
+              - { label: "Izoh", name: "label", widget: "string" }
+
+          - { label: "Banner — kichik sarlavha", name: "banner_label", widget: "string" }
+          - { label: "Banner — katta sarlavha", name: "banner_title", widget: "string" }
+          - { label: "Telefon raqam 1", name: "phone1", widget: "string" }
+          - { label: "Telefon raqam 2", name: "phone2", widget: "string" }
+          - { label: "Manzil", name: "address", widget: "string" }
+
+          - { label: "Biz haqimizda matni", name: "about_text", widget: "text" }
+
+          - label: "Afzalliklar (kartochkalar)"
+            name: "advantages"
+            widget: "list"
+            fields:
+              - { label: "Emoji belgisi", name: "icon", widget: "string" }
+              - { label: "Sarlavha", name: "title", widget: "string" }
+              - { label: "Matn", name: "text", widget: "string" }
+
+          - label: "Yo'nalishlar (fanlar ro'yxati)"
+            name: "subjects"
+            widget: "list"
+            field: { label: "Fan nomi", name: "subject", widget: "string" }
+
+          - label: "Qabul jarayoni (qadamlar)"
+            name: "admission_steps"
+            widget: "list"
+            fields:
+              - { label: "Sarlavha", name: "title", widget: "string" }
+              - { label: "Matn", name: "text", widget: "string" }
+
+          - label: "Darsdan tashqari mashg'ulotlar"
+            name: "activities"
+            widget: "list"
+            fields:
+              - { label: "Emoji belgisi", name: "icon", widget: "string" }
+              - { label: "Nomi", name: "label", widget: "string" }
+
+          - label: "Savol-javob (FAQ)"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Savol", name: "q", widget: "string" }
+              - { label: "Javob", name: "a", widget: "text" }
+
+          - { label: "Telegram havolasi", name: "telegram", widget: "string" }
+          - { label: "Instagram havolasi", name: "instagram", widget: "string" }

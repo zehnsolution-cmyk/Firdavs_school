@@ -1,0 +1,529 @@
+/* ===== RANGLAR VA UMUMIY SOZLAMALAR ===== */
+
+:root {
+    /* :root ichida saytda qayta-qayta ishlatiladigan ranglarni "o'zgaruvchi" qilib belgilaymiz */
+    --kok: #1e3a6e;        /* Logotipdagi to'q ko'k rang */
+    --yashil: #8bc53f;     /* Logotipdagi yashil rang */
+    --yashil-toq: #6ea52e; /* Yashilning biroz to'qroq varianti (hover uchun) */
+    --oq: #ffffff;
+    --fon-kulrang: #f5f7fa;
+    --matn-kulrang: #5a6472;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2c3444;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--kok);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== LOGOTIP ===== */
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 48px;
+    /* Logotip rasmining balandligi — kerak bo'lsa shu raqamni o'zgartiring */
+    width: auto;
+}
+
+.logo-firdavs {
+    color: var(--kok);
+}
+
+.logo-school {
+    color: var(--yashil);
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+/* ===== YUQORIDAGI NAVIGATSIYA (MENYU) ===== */
+
+.nav {
+    background-color: var(--oq);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    /* sticky — sahifani pastga surganda ham menyu tepada qolib turadi */
+    z-index: 100;
+}
+
+.nav-ichi {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.menyu {
+    display: flex;
+    gap: 28px;
+}
+
+.menyu a {
+    color: var(--kok);
+    font-weight: 500;
+}
+
+.menyu a:hover {
+    color: var(--yashil);
+}
+
+.nav-tel-btn {
+    background-color: var(--yashil);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    /* Matn ikki qatorga bo'linib ketmasligi uchun */
+}
+
+.nav-tel-btn:hover {
+    background-color: var(--yashil-toq);
+}
+
+/* ===== HERO (ASOSIY TANISHTIRUV) QISMI ===== */
+
+.hero {
+    background: linear-gradient(135deg, var(--kok), #2d5aa8);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-ichi {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(139, 197, 63, 0.2);
+    border: 1px solid var(--yashil);
+    color: var(--yashil);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--yashil);
+}
+
+.hero-matn {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.hero-tugmalar {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s;
+    /* Tugmalar ustiga borganda ranglar silliq o'zgarishi uchun */
+}
+
+.btn-asosiy {
+    background-color: var(--yashil);
+    color: white;
+}
+
+.btn-asosiy:hover {
+    background-color: var(--yashil-toq);
+}
+
+.btn-ikkinchi {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-ikkinchi:hover {
+    background-color: white;
+    color: var(--kok);
+}
+
+/* ===== YUTUQLARIMIZ / STATISTIKA QISMI ===== */
+
+.statistika {
+    background-color: var(--fon-kulrang);
+    padding: 50px 24px;
+}
+
+.statistika-ichi {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.stat-son {
+    font-size: 34px;
+    font-weight: bold;
+    color: var(--kok);
+}
+
+.stat-izoh {
+    color: var(--matn-kulrang);
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+/* ===== OPEN HOUSE / IMTIHON BANNERI ===== */
+
+.banner {
+    max-width: 1100px;
+    margin: -30px auto 0;
+    /* Manfiy margin — banner hero blokining ustiga biroz "chiqib" turadi, chiroyli effekt uchun */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 2;
+}
+
+.banner-tel {
+    background-color: var(--oq);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 32px;
+    border: 2px solid var(--yashil);
+    border-bottom: none;
+}
+
+.banner-sarlavha {
+    color: var(--matn-kulrang);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.banner-katta {
+    color: var(--kok);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.banner-raqamlar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.banner-raqamlar a {
+    color: var(--kok);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tel-icon {
+    color: var(--yashil);
+}
+
+.banner-manzil {
+    background-color: var(--kok);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 32px;
+}
+
+.manzil-icon {
+    font-size: 28px;
+    color: var(--yashil);
+}
+
+.manzil-sarlavha {
+    color: var(--yashil);
+    font-weight: bold;
+}
+
+/* ===== UMUMIY BLOK SOZLAMALARI ===== */
+
+.blok {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+}
+
+.blok-oq {
+    background-color: var(--fon-kulrang);
+    max-width: 100%;
+    padding: 60px 24px;
+}
+
+.blok-oq h2,
+.blok-oq .blok-tavsif {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blok h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.blok > p {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: var(--matn-kulrang);
+    font-size: 17px;
+}
+
+.blok-tavsif {
+    text-align: center;
+    color: var(--matn-kulrang);
+    margin-bottom: 32px;
+}
+
+/* ===== AFZALLIKLAR KARTOCHKALARI ===== */
+
+.afzalliklar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* auto-fit — ekran kengligiga qarab kartochkalar avtomatik qatorga joylashadi */
+    gap: 24px;
+}
+
+.afzallik-karta {
+    background-color: var(--fon-kulrang);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.afzallik-icon {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.afzallik-karta h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.afzallik-karta p {
+    color: var(--matn-kulrang);
+    font-size: 15px;
+}
+
+/* ===== FANLAR GRID ===== */
+
+.fanlar-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.fan-karta {
+    background-color: white;
+    border: 2px solid #e3e8ef;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--kok);
+    transition: 0.2s;
+}
+
+.fan-karta:hover {
+    border-color: var(--yashil);
+    transform: translateY(-3px);
+    /* Ustiga kelganda kartochka biroz yuqoriga ko'tariladi */
+}
+
+/* ===== QABUL JARAYONI (QADAMLAR) ===== */
+
+.qadamlar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.qadam-karta {
+    background-color: var(--fon-kulrang);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.qadam-raqam {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--kok);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.qadam-karta h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.qadam-karta p {
+    color: var(--matn-kulrang);
+    font-size: 15px;
+}
+
+/* ===== SAVOL-JAVOB (FAQ) ===== */
+
+.faq-royxat {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background-color: var(--fon-kulrang);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+
+.faq-item summary {
+    font-weight: bold;
+    color: var(--kok);
+    cursor: pointer;
+    /* cursor: pointer — sichqoncha ustiga borganda "qo'l" belgisi chiqadi, bosish mumkinligini bildiradi */
+}
+
+.faq-item p {
+    margin-top: 10px;
+    color: var(--matn-kulrang);
+}
+
+/* ===== FUTER (ENG PASTKI QISM) ===== */
+
+.futer {
+    background-color: var(--kok);
+    color: #cfd8e6;
+    padding: 60px 24px 24px;
+}
+
+.futer-ichi {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.futer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.futer-logo-icon {
+    height: 36px;
+    width: auto;
+}
+
+.futer-ustun h4 {
+    color: white;
+    margin-bottom: 16px;
+}
+
+.futer-ustun p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.futer-ustun a:hover {
+    color: var(--yashil);
+}
+
+.futer-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== MOBIL TELEFONLAR UCHUN MOSLASHUV ===== */
+
+@media (max-width: 768px) {
+    /* Ekran kengligi 768px dan kichik bo'lsa (telefon), quyidagi qoidalar ishga tushadi */
+
+    .menyu {
+        display: none;
+        /* Kichik ekranda menyuni yashiramiz, sodda saqlash uchun */
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .banner-tel,
+    .banner-manzil {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
