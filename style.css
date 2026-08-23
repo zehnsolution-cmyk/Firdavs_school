@@ -3,11 +3,21 @@
 :root {
     /* :root ichida saytda qayta-qayta ishlatiladigan ranglarni "o'zgaruvchi" qilib belgilaymiz */
     --kok: #1e3a6e;        /* Logotipdagi to'q ko'k rang */
+    --kok-och: #2d5aa8;    /* Ko'kning ochroq varianti (gradient uchun) */
     --yashil: #8bc53f;     /* Logotipdagi yashil rang */
     --yashil-toq: #6ea52e; /* Yashilning biroz to'qroq varianti (hover uchun) */
     --oq: #ffffff;
-    --fon-kulrang: #f5f7fa;
+    --fon-kulrang: #f6f8fb;
     --matn-kulrang: #5a6472;
+
+    /* Pastel (yumshoq) fon ranglari — kartochkalarni jonlantirish uchun */
+    --tint-kok: #eaf1fb;
+    --tint-yashil: #edf8e2;
+
+    --radius-katta: 20px;
+    --radius-pill: 30px;
+    --soya: 0 10px 30px rgba(30, 58, 110, 0.08);
+    --soya-katta: 0 16px 40px rgba(30, 58, 110, 0.14);
 }
 
 * {
@@ -17,13 +27,18 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    /* Inter — Rahimov School kabi zamonaviy ta'lim saytlarida ishlatiladigan aniq shrift */
     color: #2c3444;
     line-height: 1.6;
+    background-color: var(--oq);
 }
 
 h1, h2, h3 {
     color: var(--kok);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    /* Harflar orasini biroz siqish — yirik sarlavhalarni zichroq va puxta ko'rsatadi */
 }
 
 a {
@@ -41,8 +56,7 @@ a {
 }
 
 .logo-img {
-    height: 48px;
-    /* Logotip rasmining balandligi — kerak bo'lsa shu raqamni o'zgartiring */
+    height: 50px;
     width: auto;
 }
 
@@ -59,18 +73,20 @@ a {
 /* ===== YUQORIDAGI NAVIGATSIYA (MENYU) ===== */
 
 .nav {
-    background-color: var(--oq);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-    position: sticky;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    /* backdrop-filter — orqa fon xiralashadi, menyu "shishasimon" ko'rinadi */
+    border-bottom: 1px solid #eef1f6;
+    position: sticky
+;
     top: 0;
-    /* sticky — sahifani pastga surganda ham menyu tepada qolib turadi */
     z-index: 100;
 }
 
 .nav-ichi {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 16px 24px;
+    padding: 14px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,61 +95,107 @@ a {
 
 .menyu {
     display: flex;
-    gap: 28px;
+    gap: 30px;
 }
 
 .menyu a {
     color: var(--kok);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.2s;
 }
 
 .menyu a:hover {
-    color: var(--yashil);
+    color: var(--yashil-toq);
 }
 
 .nav-tel-btn {
     background-color: var(--yashil);
     color: white;
-    padding: 10px 20px;
-    border-radius: 24px;
-    font-weight: bold;
+    padding: 11px 22px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: 15px;
     white-space: nowrap;
-    /* Matn ikki qatorga bo'linib ketmasligi uchun */
+    box-shadow: 0 6px 16px rgba(139, 197, 63, 0.35);
+    transition: 0.2s;
 }
 
 .nav-tel-btn:hover {
     background-color: var(--yashil-toq);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(139, 197, 63, 0.4);
 }
 
 /* ===== HERO (ASOSIY TANISHTIRUV) QISMI ===== */
 
 .hero {
-    background: linear-gradient(135deg, var(--kok), #2d5aa8);
+    background: linear-gradient(160deg, var(--kok) 0%, var(--kok-och) 55%, #2f66b8 100%);
     color: white;
-    text-align: center;
-    padding: 80px 20px;
+    padding: 90px 24px 60px;
+    position: relative;
+    overflow: hidden;
+    /* overflow: hidden — fondagi doiralar bo'lim chegarasidan tashqariga chiqmasin */
+}
+
+/* Fondagi yumshoq, xiralashgan rangli doiralar — sahifaga chuqurlik va zamonaviylik beradi */
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+    /* pointer-events: none — bu doiralar sichqoncha bosishlarga xalaqit bermaydi */
+}
+
+.hero-blob-1 {
+    width: 380px;
+    height: 380px;
+    background: var(--yashil);
+    top: -120px;
+    right: -80px;
+}
+
+.hero-blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #4d84d6;
+    bottom: -100px;
+    left: -60px;
+}
+
+.hero-flex {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-ichi {
-    max-width: 800px;
-    margin: 0 auto;
+    flex: 1 1 480px;
+    min-width: 280px;
 }
 
 .hero-badge {
     display: inline-block;
-    background-color: rgba(139, 197, 63, 0.2);
-    border: 1px solid var(--yashil);
-    color: var(--yashil);
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-weight: bold;
+    background-color: rgba(139, 197, 63, 0.18);
+    border: 1px solid rgba(139, 197, 63, 0.6);
+    color: #b3e26a;
+    padding: 9px 20px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
     font-size: 14px;
     margin-bottom: 24px;
 }
 
 .hero h1 {
     color: white;
-    font-size: 40px;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.15;
     margin-bottom: 20px;
 }
 
@@ -143,51 +205,80 @@ a {
 
 .hero-matn {
     font-size: 18px;
-    opacity: 0.9;
+    opacity: 0.85;
     margin-bottom: 32px;
+    max-width: 480px;
 }
 
 .hero-tugmalar {
     display: flex;
-    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
 }
 
+.hero-grafika {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-grafika-doira {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 60px rgba(139, 197, 63, 0.15);
+}
+
+.hero-grafika-img {
+    width: 55%;
+    height: auto;
+    filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.25));
+}
+
 .btn {
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
     font-size: 16px;
     transition: 0.2s;
-    /* Tugmalar ustiga borganda ranglar silliq o'zgarishi uchun */
+    display: inline-block;
 }
 
 .btn-asosiy {
     background-color: var(--yashil);
     color: white;
+    box-shadow: 0 10px 24px rgba(139, 197, 63, 0.35);
 }
 
 .btn-asosiy:hover {
     background-color: var(--yashil-toq);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(139, 197, 63, 0.4);
 }
 
 .btn-ikkinchi {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 2px solid white;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-ikkinchi:hover {
     background-color: white;
     color: var(--kok);
+    transform: translateY(-3px);
 }
 
 /* ===== YUTUQLARIMIZ / STATISTIKA QISMI ===== */
 
 .statistika {
-    background-color: var(--fon-kulrang);
-    padding: 50px 24px;
+    background-color: var(--oq);
+    padding: 56px 24px 16px;
 }
 
 .statistika-ichi {
@@ -199,27 +290,32 @@ a {
     text-align: center;
 }
 
+.stat-karta {
+    padding: 8px;
+}
+
 .stat-son {
-    font-size: 34px;
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 900;
     color: var(--kok);
+    letter-spacing: -0.02em;
 }
 
 .stat-izoh {
     color: var(--matn-kulrang);
     font-size: 15px;
     margin-top: 6px;
+    font-weight: 500;
 }
 
-/* ===== OPEN HOUSE / IMTIHON BANNERI ===== */
+/* ===== ALOQA / RO'YXATDAN O'TISH BANNERI ===== */
 
 .banner {
     max-width: 1100px;
-    margin: -30px auto 0;
-    /* Manfiy margin — banner hero blokining ustiga biroz "chiqib" turadi, chiroyli effekt uchun */
-    border-radius: 16px;
+    margin: 16px auto 0;
+    border-radius: var(--radius-katta);
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--soya-katta);
     position: relative;
     z-index: 2;
 }
@@ -231,22 +327,23 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 24px 32px;
-    border: 2px solid var(--yashil);
+    padding: 28px 36px;
+    border: 2px solid var(--tint-yashil);
     border-bottom: none;
 }
 
 .banner-sarlavha {
     color: var(--matn-kulrang);
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
 }
 
 .banner-katta {
     color: var(--kok);
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .banner-raqamlar {
@@ -258,7 +355,12 @@ a {
 .banner-raqamlar a {
     color: var(--kok);
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.banner-raqamlar a:hover {
+    color: var(--yashil-toq);
 }
 
 .tel-icon {
@@ -271,7 +373,7 @@ a {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 20px 32px;
+    padding: 22px 36px;
 }
 
 .manzil-icon {
@@ -287,26 +389,26 @@ a {
 /* ===== UMUMIY BLOK SOZLAMALARI ===== */
 
 .blok {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 80px 24px 60px;
+    padding: 90px 24px 60px;
 }
 
 .blok-oq {
     background-color: var(--fon-kulrang);
     max-width: 100%;
-    padding: 60px 24px;
+    padding: 70px 24px;
 }
 
 .blok-oq h2,
 .blok-oq .blok-tavsif {
-    max-width: 1100px;
+    max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .blok h2 {
-    font-size: 30px;
+    font-size: 34px;
     text-align: center;
     margin-bottom: 16px;
 }
@@ -322,7 +424,8 @@ a {
 .blok-tavsif {
     text-align: center;
     color: var(--matn-kulrang);
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    font-size: 17px;
 }
 
 /* ===== AFZALLIKLAR KARTOCHKALARI ===== */
@@ -335,16 +438,34 @@ a {
 }
 
 .afzallik-karta {
-    background-color: var(--fon-kulrang);
-    border-radius: 12px;
-    padding: 28px 20px;
+    background-color: var(--tint-kok);
+    border-radius: var(--radius-katta);
+    padding: 32px 24px;
     text-align: center;
+    transition: 0.25s;
+}
+
+/* Kartochkalarni Rahimov saytidagi kabi navbatma-navbat rangda ko'rsatamiz */
+.afzallik-karta:nth-child(2n) {
+    background-color: var(--tint-yashil);
+}
+
+.afzallik-karta:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--soya);
 }
 
 .afzallik-icon {
-    font-size: 36px;
-    display: block;
-    margin-bottom: 12px;
+    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: var(--soya);
 }
 
 .afzallik-karta h3 {
@@ -360,7 +481,7 @@ a {
 /* ===== FANLAR GRID ===== */
 
 .fanlar-grid {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -369,19 +490,19 @@ a {
 
 .fan-karta {
     background-color: white;
-    border: 2px solid #e3e8ef;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 22px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--kok);
-    transition: 0.2s;
+    box-shadow: var(--soya);
+    transition: 0.25s;
 }
 
 .fan-karta:hover {
-    border-color: var(--yashil);
-    transform: translateY(-3px);
-    /* Ustiga kelganda kartochka biroz yuqoriga ko'tariladi */
+    transform: translateY(-5px);
+    box-shadow: var(--soya-katta);
+    color: var(--yashil-toq);
 }
 
 /* ===== QABUL JARAYONI (QADAMLAR) ===== */
@@ -393,25 +514,32 @@ a {
 }
 
 .qadam-karta {
-    background-color: var(--fon-kulrang);
-    border-radius: 12px;
-    padding: 28px 20px;
+    background-color: var(--oq);
+    border: 1px solid #eef1f6;
+    border-radius: var(--radius-katta);
+    padding: 32px 24px;
     text-align: center;
     position: relative;
+    transition: 0.25s;
+}
+
+.qadam-karta:hover {
+    box-shadow: var(--soya);
+    transform: translateY(-4px);
 }
 
 .qadam-raqam {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background-color: var(--kok);
+    background: linear-gradient(135deg, var(--yashil), var(--yashil-toq));
     color: white;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 18px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .qadam-karta h3 {
@@ -435,20 +563,21 @@ a {
 }
 
 .faq-item {
-    background-color: var(--fon-kulrang);
-    border-radius: 10px;
-    padding: 16px 20px;
+    background-color: var(--oq);
+    border: 1px solid #eef1f6;
+    border-radius: 14px;
+    padding: 18px 22px;
 }
 
 .faq-item summary {
-    font-weight: bold;
+    font-weight: 700;
     color: var(--kok);
     cursor: pointer;
     /* cursor: pointer — sichqoncha ustiga borganda "qo'l" belgisi chiqadi, bosish mumkinligini bildiradi */
 }
 
 .faq-item p {
-    margin-top: 10px;
+    margin-top: 12px;
     color: var(--matn-kulrang);
 }
 
@@ -457,11 +586,11 @@ a {
 .futer {
     background-color: var(--kok);
     color: #cfd8e6;
-    padding: 60px 24px 24px;
+    padding: 64px 24px 24px;
 }
 
 .futer-ichi {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -486,6 +615,7 @@ a {
 .futer-ustun h4 {
     color: white;
     margin-bottom: 16px;
+    font-size: 16px;
 }
 
 .futer-ustun p {
@@ -502,11 +632,18 @@ a {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     font-size: 14px;
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
 }
 
 /* ===== MOBIL TELEFONLAR UCHUN MOSLASHUV ===== */
+
+@media (max-width: 900px) {
+    .hero-grafika {
+        display: none;
+        /* Kichikroq ekranlarda o'ngdagi doira grafikasini yashiramiz, joy tejash uchun */
+    }
+}
 
 @media (max-width: 768px) {
     /* Ekran kengligi 768px dan kichik bo'lsa (telefon), quyidagi qoidalar ishga tushadi */
@@ -517,7 +654,15 @@ a {
     }
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 30px;
+    }
+
+    .hero-flex {
+        text-align: center;
+    }
+
+    .hero-tugmalar {
+        justify-content: center;
     }
 
     .banner-tel,

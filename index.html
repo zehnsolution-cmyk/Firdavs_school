@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firdavs School — Bilim va kelajak</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Inter — zamonaviy, aniq o'qiladigan shrift. Rahimov School kabi yetakchi
+         ta'lim saytlarida keng qo'llaniladi -->
+
     <link rel="stylesheet" href="style.css">
     <!-- Sahifaning dizayni style.css faylida -->
 
@@ -35,13 +41,25 @@
     <!-- Bu bo'limdagi matnlar content.json faylidan JavaScript orqali to'ldiriladi.
          Matnni o'zgartirish uchun admin panel (/admin) yoki content.json faylini tahrirlang. -->
     <section id="top" class="hero">
-        <div class="hero-ichi">
-            <p class="hero-badge" id="hero-badge"></p>
-            <h1 id="hero-title"></h1>
-            <p class="hero-matn" id="hero-text"></p>
-            <div class="hero-tugmalar">
-                <a href="#royxat" class="btn btn-asosiy">Ro'yxatdan o'tish</a>
-                <a href="#about" class="btn btn-ikkinchi">Batafsil ma'lumot</a>
+        <!-- hero-blob-lar — fondagi yumshoq, xiralashgan rangli doiralar (dekorativ, faqat CSS bilan) -->
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+
+        <div class="hero-flex">
+            <div class="hero-ichi">
+                <p class="hero-badge" id="hero-badge"></p>
+                <h1 id="hero-title"></h1>
+                <p class="hero-matn" id="hero-text"></p>
+                <div class="hero-tugmalar">
+                    <a href="#royxat" class="btn btn-asosiy">Ro'yxatdan o'tish &#8594;</a>
+                    <a href="#about" class="btn btn-ikkinchi">Batafsil ma'lumot</a>
+                </div>
+            </div>
+            <div class="hero-grafika">
+                <!-- Haqiqiy rasm/surat o'rniga brend belgimizni katta va chiroyli qilib ko'rsatamiz -->
+                <div class="hero-grafika-doira">
+                    <img src="logo-icon.png" alt="" class="hero-grafika-img">
+                </div>
             </div>
         </div>
     </section>
