@@ -3,9 +3,10 @@
   "hero_title_before": "Farzandingiz kelajagi ",
   "hero_title_highlight": "Firdavs School",
   "hero_title_after": "da boshlanadi",
-  "hero_text": "Zamonaviy dasturlar, tajribali o'qituvchilar va g'amxo'r muhitda farzandingiz bilim va ko'nikmalarni mustahkam egallaydi.",
+  "hero_text": "1-11-sinflargacha bo'lgan o'quvchilar uchun zamonaviy dasturlar, xalqaro darajadagi o'qituvchilar va g'amxo'r muhitda farzandingiz bilim va ko'nikmalarni mustahkam egallaydi.",
 
   "stats": [
+    { "number": "1-11", "label": "sinflargacha qabul" },
     { "number": "1 yil", "label": "faoliyat tajribamiz" },
     { "number": "2 nafar", "label": "o'quvchimiz Prezident maktabiga qabul qilindi (4- va 7-sinf)" }
   ],
@@ -19,9 +20,9 @@
   "about_text": "Firdavs School — o'quvchilarga sifatli ta'lim va kuchli bilim asoslarini beruvchi zamonaviy ta'lim maskani. Bizning maqsadimiz har bir o'quvchini o'z salohiyatini to'liq namoyon eta oladigan bilimli va o'zini o'zi ishontirgan shaxs sifatida tarbiyalashdir.",
 
   "advantages": [
-    { "icon": "🎓", "title": "Tajribali o'qituvchilar", "text": "Malakali va g'amxo'r pedagoglar jamoasi" },
+    { "icon": "🎓", "title": "Xalqaro darajadagi o'qituvchilar", "text": "Yuqori malakali va g'amxo'r pedagoglar jamoasi" },
     { "icon": "📚", "title": "Zamonaviy dasturlar", "text": "Xalqaro standartlarga mos o'quv rejalari" },
-    { "icon": "🏆", "title": "Yuqori natijalar", "text": "O'quvchilarimizning olimpiada va imtihonlardagi yutuqlari" }
+    { "icon": "🏆", "title": "Olimpiada tayyorgarligi", "text": "GEMO, GRAND OLIMPIADA kabi respublika va xalqaro musobaqalarga tayyorlaymiz" }
   ],
 
   "subjects": [
@@ -30,31 +31,32 @@
     "Rus tili",
     "Informatika",
     "Ona tili va adabiyot",
-    "Fizika"
+    "Fizika",
+    "Tabiiy fanlar (Science)"
   ],
 
   "admission_steps": [
     { "title": "Qo'ng'iroq qiling", "text": "Ko'rsatilgan raqamlarga qo'ng'iroq qilib, birlamchi ma'lumot oling" },
+    { "title": "Bepul diagnostika", "text": "Farzandingiz bilim darajasi bepul diagnostik test orqali aniqlanadi" },
     { "title": "Suhbat", "text": "Farzandingiz va siz bilan tanishuv suhbati o'tkaziladi" },
     { "title": "Ro'yxatdan o'tish", "text": "Hujjatlarni topshirib, o'quv jarayoni boshlanadi" }
   ],
 
   "activities": [
-    { "icon": "♔", "label": "Shaxmat" },
-    { "icon": "⚽", "label": "Futbol" },
-    { "icon": "🏀", "label": "Basketbol" },
-    { "icon": "🎨", "label": "Rasm chizish" },
-    { "icon": "🎵", "label": "Musiqa" },
-    { "icon": "📚", "label": "Kitobxonlik klubi" }
+    { "icon": "🏆", "label": "Olimpiadalar (GEMO, GRAND OLIMPIADA)" },
+    { "icon": "🧭", "label": "Madaniy sayohatlar (Buxoro va boshqa shaharlar)" },
+    { "icon": "🔬", "label": "Pochemuchka — qiziqarli ilm-fan klubi" },
+    { "icon": "🍽️", "label": "Maktab oshxonasi" }
   ],
 
   "faq": [
-    { "q": "Maktab nechanchi sinflarni qabul qiladi?", "a": "BU YERGA JAVOB YOZING" },
+    { "q": "Maktab nechanchi sinflarni qabul qiladi?", "a": "1-11-sinflargacha qabul qilinadi. Bundan tashqari, 5- va 6-sinfni tugatgan o'quvchilar uchun Tabiiy fanlar (Science) va Ingliz tili yo'nalishida maxsus ixtisoslashtirilgan sinflar ham mavjud." },
+    { "q": "Bepul diagnostika testi bormi?", "a": "Ha. Farzandingizning bilim darajasi bepul diagnostik test orqali aniqlanadi — qaysi mavzularda kuchli, qaysilarida qo'shimcha ishlash kerakligi batafsil ko'rsatib beriladi." },
     { "q": "Ta'lim qaysi tilda olib boriladi?", "a": "BU YERGA JAVOB YOZING" },
-    { "q": "Maktabga qabul qanday amalga oshiriladi?", "a": "BU YERGA JAVOB YOZING" },
+    { "q": "Maktabga qabul qanday amalga oshiriladi?", "a": "Avval bepul diagnostika testi, so'ngra o'quvchi va ota-ona bilan suhbat orqali qabul amalga oshiriladi." },
     { "q": "O'quv narxi qancha?", "a": "Narxlar haqida to'liq ma'lumot uchun bizga qo'ng'iroq qiling: +998 88 606 55 05" }
   ],
 
-  "telegram": "https://t.me/username",
-  "instagram": "https://instagram.com/username"
+  "telegram": "https://t.me/firdavsschooluz",
+  "instagram": "https://www.instagram.com/firdavs_school"
 }
